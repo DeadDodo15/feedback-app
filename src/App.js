@@ -11,18 +11,25 @@ function App(){
         { id:5, text: "comment five" },
     ]
     
+    let displayComments = true
+
+    let commentBlock = (
+    <div className="comments">
+    <h3>Comments ({comments.length})</h3>
+    <ul>
+        {comments.map((comment, index) => (
+            <li key={comment.id}>{comment.text}</li>
+        )  )}
+    </ul>
+    </div>
+    )
 
     return <>
     <h1>{title}</h1>
     <p>{body}</p>
-    <div className="comments">
-        <h3>Comments ({comments.length})</h3>
-        <ul>
-            {comments.map((comment, index) => (
-                <li key={comment.id}>{comment.text}</li>
-            )  )}
-        </ul>
-    </div>
+
+    {displayComments ? commentBlock : 'No comments available' }
+   
     </>
 }
 
