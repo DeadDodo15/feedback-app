@@ -16,14 +16,7 @@ function FeedbackStats({ feedback }){
 }
 
 FeedbackStats.propTypes = {
-    feedback: PropTypes.arrayOf(
-    PropTypes.shape(
-        {
-            id: PropTypes.number.isRequired,
-            text: PropTypes.string.isRequired,
-            rating: PropTypes.number.isRequired,
-        }
-    ))
+    feedback: PropTypes.array.isRequired
 }
 
 export default FeedbackStats
