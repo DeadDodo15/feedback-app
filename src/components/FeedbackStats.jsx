@@ -2,8 +2,9 @@ import PropTypes  from 'prop-types'
 
 function FeedbackStats({ feedback }){
 
-    let averageRating = feedback.reduce((acc,curr)=>{return acc + curr.rating},0)/feedback.length
-    averageRating.toFixed(1).replace(/[.,]0$/,"")
+    const averageRating = Math.round(
+        feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length
+      )
     
     return(
         <div className="feedback-stats">
